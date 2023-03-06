@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        canvas{
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas" onclick="onCanvasClicked(event)"></canvas>
+    <script>
+            let canvas = document.getElementById("canvas");
+            let draw = canvas.getContext("2d");
+            console.log(draw);
+
+            //#   ff  00  aa
+            //    čer zel mod
+            draw.fillStyle = "#ff0000";
+            draw.font = "25px IMPACT";
+            draw.fillText("Buď zdráv.", 50, 50);
+
+
+            function onCanvasClicked(event){
+              //  alert("Pozice myši na X: " + event.clientX + "\n Pozice myši na Y: " + event.clientY);
+                draw.beginPath();
+                draw.rect(event.clientX, event.clientY, 20, 20);
+                draw.stroke();
+                  
+            }
+    </script>
+</body>
+</html>
